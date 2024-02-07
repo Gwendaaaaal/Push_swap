@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/07 16:02:13 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:23:54 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,4 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int	parse(char **args, t_list *stack_a);
+int	parse(char **args, t_list **stack_a);
