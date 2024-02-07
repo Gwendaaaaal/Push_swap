@@ -6,18 +6,19 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:12:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/06 17:09:25 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:01:29 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
  
+#include "Libft/libft.h"
 #include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	t_list	stack_a;
+	t_list	stack_b;
 
-	i = 1;
 	if (argc == 1)
 		return (-1);
-	parse(argv);
+	parse(argv, stack_a);
 }
