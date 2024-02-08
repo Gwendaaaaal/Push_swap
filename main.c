@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:12:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/08 17:16:09 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:46:38 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,25 @@ int	main(int argc, char **argv)
 	printf("SWAP A\n");
 	swap(&stack_a);
 	print_stacks(stack_a, stack_b);
-	printf("PUSH A\n");
-	push(&stack_a, &stack_b);
-	print_stacks(stack_a, stack_b);
-	printf("PUSH A\n");
-	push(&stack_a, &stack_b);
+	printf("PUSH B\n");
+	push(&stack_b, &stack_a);
 	print_stacks(stack_a, stack_b);
 	printf("PUSH B\n");
 	push(&stack_b, &stack_a);
+	print_stacks(stack_a, stack_b);
+	printf("PUSH B\n");
+	push(&stack_b, &stack_a);
+	print_stacks(stack_a, stack_b);
+	printf("PUSH B\n");
+	push(&stack_b, &stack_a);
+	print_stacks(stack_a, stack_b);
+	printf("PUSH A\n");
+	push(&stack_a, &stack_b);
+	print_stacks(stack_a, stack_b);
+	printf("ROTATE A\n");
+	rotate(&stack_a);
+	print_stacks(stack_a, stack_b);
+	printf("ROTATE B\n");
+	rotate(&stack_b);
 	print_stacks(stack_a, stack_b);
 }
