@@ -6,10 +6,10 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:12:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/07 19:05:22 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:49:56 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- 
+
 #include "Libft/libft.h"
 #include "push_swap.h"
 
@@ -22,7 +22,6 @@ void	print_stacks(t_list *stack_a, t_list *stack_b)
 	}
 	printf("- -\n");
 	printf("a b\n");
-	
 }
 
 int	main(int argc, char **argv)

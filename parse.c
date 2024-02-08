@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:44:00 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/07 19:03:59 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:50:26 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	check_dup(t_list *stack, int number)
 			return (0);
 		stack = stack->next;
 	}
-	return(1);
+	return (1);
 }
 
 int	parse(char **argv, t_list **stack_a)
