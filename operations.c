@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:07:47 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/08 17:06:40 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:30:53 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ void	push(t_list **to_push, t_list **stack)
 {
 	t_list *tmp;
 
-	tmp = (*to_push);
-	(*to_push) = (*to_push)->next;
+	if (ft_lstsize(*stack) == 0)
+		return ;
+	tmp = (*stack);
+	(*stack) = (*stack)->next;
 
-	ft_lstadd_front(stack, tmp);
+	ft_lstadd_front(to_push, tmp);
 }
