@@ -6,12 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:44:00 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/08 17:03:55 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:21:00 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "./Libft/libft.h"
+#include "../push_swap.h"
 
 static int	check_number(char *str)
 {
@@ -54,7 +53,7 @@ static int	check_dup(t_list *stack, int number)
 {
 	while (stack)
 	{
-		if (*((int *) stack->content) == number)
+		if (stack->content == number)
 			return (0);
 		stack = stack->next;
 	}
@@ -64,7 +63,7 @@ static int	check_dup(t_list *stack, int number)
 int	parse(char **argv, t_list **stack_a)
 {
 	int		i;
-	int		*number;
+	int		number;
 	t_list	*tmp;
 
 	i = 1;
@@ -72,11 +71,8 @@ int	parse(char **argv, t_list **stack_a)
 		return (write(1, "Error\n", 6), 0);
 	while (argv[i])
 	{
-		number = malloc(sizeof(int));
-		if (!number)
-			return (0);
-		*number = ft_atoi(argv[i]);
-		if (!check_dup(*stack_a, *number))
+		number = ft_atoi(argv[i]);
+		if (!check_dup(*stack_a, number))
 			return (write(1, "Error\n", 6), 0);
 		tmp = ft_lstnew(number);
 		if (!tmp)
