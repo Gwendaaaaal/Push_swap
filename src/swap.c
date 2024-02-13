@@ -6,11 +6,11 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 23:31:08 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/09 23:32:10 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:01:33 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	swap(t_list **stack)
 {
