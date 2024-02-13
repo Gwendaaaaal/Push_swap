@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:12:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/08 17:46:38 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/10 01:13:03 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,14 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	if (argc == 1)
 		return (-1);
 	if (!parse(argv, &stack_a))
 		return (-1);
+	if (stack_sorted(stack_a))
+		return(printf("STACK SORTED"));
 	print_stacks(stack_a, stack_b);
 	printf("SWAP A\n");
 	swap(&stack_a);
@@ -71,5 +75,8 @@ int	main(int argc, char **argv)
 	print_stacks(stack_a, stack_b);
 	printf("ROTATE B\n");
 	rotate(&stack_b);
+	print_stacks(stack_a, stack_b);
+	printf("RRR\n");
+	rrr(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
 }
