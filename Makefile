@@ -2,7 +2,7 @@ NAME = push_swap
 
 SRC_DIR = src
 
-SOURCES = main.c operations.c parse.c 
+SOURCES = main.c operations.c parse.c push.c rotate.c swap.c utils.c
 
 OBJ_DIR = obj
 
