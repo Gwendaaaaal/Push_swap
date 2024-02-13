@@ -6,12 +6,12 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:12:53 by gholloco          #+#    #+#             */
+/*   Updated: 2024/02/13 14:44:52 by gholloco         ###   ########.fr       */
 /*   Updated: 2024/02/10 01:13:03 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	print_stacks(t_list *stack_a, t_list *stack_b)
 {
@@ -19,14 +19,14 @@ void	print_stacks(t_list *stack_a, t_list *stack_b)
 	{
 		if (stack_a)
 		{
-			printf("%i", *((int *) stack_a->content));
+			printf("%i", stack_a->content);
 			stack_a = stack_a->next;
 		}
 		else
 			printf(" ");
 		if (stack_b)
 		{
-			printf("\t%i", *((int *) stack_b->content));
+			printf("\t%i", stack_b->content);
 			stack_b = stack_b->next;
 		}
 		printf("\n");
