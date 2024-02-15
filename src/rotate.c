@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:07:47 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/13 15:01:27 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/13 22:48:04 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rotate(t_list **stack)
 {
 	t_list	*tmp;
 
-	if (ft_lstsize(*stack) < 1)
+	if (ft_lstsize(*stack) <= 1)
 		return ;
 	tmp = (*stack);
 	(*stack) = (*stack)->next;
@@ -28,7 +28,7 @@ void	rrotate(t_list **stack)
 {
 	t_list	*tmp;
 
-	if (ft_lstsize(*stack) < 1)
+	if (ft_lstsize(*stack) <= 1)
 		return ;
 	tmp = *stack;
 	while (tmp->next->next)
