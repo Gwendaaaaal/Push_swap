@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
+#    Updated: 2024/02/15 16:57:56 by gholloco         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap
 
 SRC_DIR = src
 
-SOURCES = main.c parse.c push.c rotate.c swap.c utils.c
+SOURCES = main.c parse.c push.c rotate.c sort.c swap.c utils.c
 
 OBJ_DIR = obj
 
@@ -16,7 +28,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 CC = cc
 
-CFLAGS = -g -Wall -Werror -Wextra -fsanitize=address
+CFLAGS = -g -Wall -Werror -Wextra
 
 RMFLAGS = -rf
 

@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:12:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/13 14:44:52 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/16 02:31:17 by gholloco         ###   ########.fr       */
 /*   Updated: 2024/02/10 01:13:03 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -48,35 +48,8 @@ int	main(int argc, char **argv)
 		return (-1);
 	if (stack_sorted(stack_a))
 		return(printf("STACK SORTED"));
+	sort(&stack_a, &stack_b);
 	print_stacks(stack_a, stack_b);
-	printf("SWAP A\n");
-	swap(&stack_a);
-	print_stacks(stack_a, stack_b);
-	printf("SWAP A\n");
-	swap(&stack_a);
-	print_stacks(stack_a, stack_b);
-	printf("PUSH B\n");
-	push(&stack_b, &stack_a);
-	print_stacks(stack_a, stack_b);
-	printf("PUSH B\n");
-	push(&stack_b, &stack_a);
-	print_stacks(stack_a, stack_b);
-	printf("PUSH B\n");
-	push(&stack_b, &stack_a);
-	print_stacks(stack_a, stack_b);
-	printf("PUSH B\n");
-	push(&stack_b, &stack_a);
-	print_stacks(stack_a, stack_b);
-	printf("PUSH A\n");
-	push(&stack_a, &stack_b);
-	print_stacks(stack_a, stack_b);
-	printf("ROTATE A\n");
-	rotate(&stack_a);
-	print_stacks(stack_a, stack_b);
-	printf("ROTATE B\n");
-	rotate(&stack_b);
-	print_stacks(stack_a, stack_b);
-	printf("RRR\n");
-	rrr(&stack_a, &stack_b);
-	print_stacks(stack_a, stack_b);
+	printf("above value of %i is %i\n", 4, find_above_value(stack_b, 4));
+	printf("below value of %i is %i\n", 4, find_below_value(stack_b, 4));
 }

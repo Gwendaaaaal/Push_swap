@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:39:52 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/12 17:06:33 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:42:55 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 typedef struct s_list
 {
 	int				content;
+	int				rotate_to_top;
+	int				rrotate_to_top;
+	int				above_value;
+	int				below_value;
 	struct s_list	*next;
 }	t_list;
 
