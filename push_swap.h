@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/16 02:26:13 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/19 22:23:54 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int		parse(char **args, t_list **stack_a);
 
 // sort.c
-int	sort(t_list **stack_a, t_list **stack_b);
+int		sort(t_list **stack_a, t_list **stack_b);
 
 // swap.c
 void	swap(t_list **stack);
@@ -40,10 +40,10 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	print_stacks(t_list *stack_a, t_list *stack_b);
 
 // utils.c
-int	max_stack_value(t_list *stack);
-int	min_stack_value(t_list *stack);
-int find_above_value(t_list *stack, int value);
-int	find_below_value(t_list *stack, int value);
-int	stack_sorted(t_list *stack);
+int		max_stack_value(t_list *stack);
+int		min_stack_value(t_list *stack);
+int		find_above_value(t_list *stack, int value);
+int		find_below_value(t_list *stack, int value);
+int		stack_sorted(t_list *stack);
 
 #endif

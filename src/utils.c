@@ -6,16 +6,17 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 00:52:49 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/16 01:47:00 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/19 23:54:44 by gholloco         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/*
+ * 	************************************************************************** */
 
 #include "../push_swap.h"
 
 int	max_stack_value(t_list *stack)
 {
 	int	max;
-
+		
 	if (!stack)
 		return (0);
 	max = stack->content;
@@ -25,7 +26,7 @@ int	max_stack_value(t_list *stack)
 			max = stack->content;
 		stack = stack->next;
 	}
-	return max;
+	return (max);
 }
 
 int	min_stack_value(t_list *stack)
@@ -41,10 +42,10 @@ int	min_stack_value(t_list *stack)
 			min = stack->content;
 		stack = stack->next;
 	}
-	return min;
+	return (min);
 }
 
-int find_above_value(t_list *stack, int value)
+int	find_above_value(t_list *stack, int value)
 {
 	int	above_value;
 
@@ -55,6 +56,8 @@ int find_above_value(t_list *stack, int value)
 			above_value = stack->content;
 		stack = stack->next;
 	}
+	if (above_value < value)
+		return (value);
 	return (above_value);
 }
 
@@ -66,9 +69,11 @@ int	find_below_value(t_list *stack, int value)
 	while (stack)
 	{
 		if (stack->content <= value && stack->content > below_value)
-			below_value = stack->content; 
+			below_value = stack->content;
 		stack = stack->next;
 	}
+	if (below_value > value)
+		return (value);
 	return (below_value);
 }
 
@@ -79,7 +84,7 @@ int	stack_sorted(t_list *stack)
 	if (!stack)
 		return (0);
 	i = stack->content;
-	while(stack)
+	while (stack)
 	{
 		if (stack->content < i)
 			return (0);
