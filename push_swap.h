@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/19 22:23:54 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:32:31 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 # include "Libft/libft.h"
 # include <unistd.h>
 # include <stdio.h>
+
+typedef struct s_move
+{
+	int				ra;
+	int				rb;
+	int				rr;
+	int				rra;
+	int				rrb;
+	int				rrr;
+	int				nb_op;
+}	t_move;
 
 // parse.c
 int		parse(char **args, t_list **stack_a);

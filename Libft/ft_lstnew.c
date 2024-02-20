@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:47:24 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/15 17:43:43 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/20 11:51:48 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_list	*ft_lstnew(int content)
 	lst->below_value = 0;
 	lst->rotate_to_top = 0;
 	lst->rrotate_to_top = 0;
+	lst->nb_op = 0;
 	lst->next = NULL;
 	return (lst);
 }

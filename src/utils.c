@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
+/*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 00:52:49 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/19 23:54:44 by gholloco         ###   ########.fr       */
+/*   Created: 2024/02/20 16:15:49 by gholloco          #+#    #+#             */
+/*   Updated: 2024/02/20 16:16:10 by gholloco         ###   ########.fr       */
 /*                                                                            */
-/*
- * 	************************************************************************** */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
 int	max_stack_value(t_list *stack)
 {
 	int	max;
-		
+
 	if (!stack)
 		return (0);
 	max = stack->content;
