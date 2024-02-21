@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/20 14:32:31 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:30:25 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_move
 int		parse(char **args, t_list **stack_a);
 
 // sort.c
-int		sort(t_list **stack_a, t_list **stack_b);
+int		sort(t_list **stack_a, t_list **stack_b, t_move **move);
 
 // swap.c
 void	swap(t_list **stack);
@@ -49,6 +49,10 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 
 // main.c
 void	print_stacks(t_list *stack_a, t_list *stack_b);
+
+// move.c
+int		optimize_move(t_move *move);
+t_move	*init_move(void);
 
 // utils.c
 int		max_stack_value(t_list *stack);
