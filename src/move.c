@@ -6,11 +6,28 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:41:45 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/21 19:46:15 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:30:55 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	exec_move(t_move *move, t_list **stack_a, t_list **stack_b)
+{
+	while (move->ra-- > 0)
+		rotate(stack_a);
+	while (move->rb-- > 0)
+		rotate(stack_b);
+	while (move->rr-- > 0)
+		rr(stack_a, stack_b);
+	while (move->rra-- > 0)
+		rrotate(stack_a);
+	while (move->rrb-- > 0)
+		rrotate(stack_a);
+	while (move->rrr-- > 0)
+		rrotate(stack_a);
+	push(stack_b, stack_a);
+}
 
 int	optimize_move(t_move *move)
 {

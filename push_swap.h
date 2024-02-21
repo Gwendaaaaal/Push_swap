@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/21 16:30:25 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:28:04 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	print_stacks(t_list *stack_a, t_list *stack_b);
 
 // move.c
+void	exec_move(t_move *move, t_list **stack_a, t_list **stack_b);
 int		optimize_move(t_move *move);
 t_move	*init_move(void);
 

@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:49:51 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/21 20:17:52 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:30:07 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int	fill_list_values(t_list **stack_a, t_list **stack_b, t_move **move)
 int	sort_into_b(t_list **stack_a, t_list **stack_b, t_move **move)
 {
 	fill_list_values(stack_a, stack_b, move);
+	exec_move(*move, stack_a, stack_b);
 	return (0);
 }
 
@@ -87,7 +88,7 @@ int	sort(t_list **stack_a, t_list **stack_b, t_move **move)
 
 	stack_a_size = ft_lstsize(*stack_a);
 	stack_b_size = ft_lstsize(*stack_b);
-	while (stack_a_size-- > 3 && stack_b_size++ < 4)
+	while (stack_a_size-- > 3 && stack_b_size++ < 2)
 		push(stack_b, stack_a);
 	while (stack_a_size-- > 3)
 		sort_into_b(stack_a, stack_b, move);
