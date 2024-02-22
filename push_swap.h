@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/21 20:28:04 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/02/22 04:02:05 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	swap(t_list **stack);
 void	ss(t_list **stack_a, t_list **stack_b);
 
 // push.c
-void	push(t_list **to_push, t_list **stack);
+void	push(t_list **to_push, t_list **stack, char c);
 
 // rotate.c
-void	rotate(t_list **stack);
-void	rrotate(t_list **stack);
+void	rotate(t_list **stack, char c);
+void	rrotate(t_list **stack, char c);
 void	rr(t_list **stack_a, t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 
@@ -51,6 +51,7 @@ void	rrr(t_list **stack_a, t_list **stack_b);
 void	print_stacks(t_list *stack_a, t_list *stack_b);
 
 // move.c
+t_move	*duplicate_move(t_move *to_dup);
 void	exec_move(t_move *move, t_list **stack_a, t_list **stack_b);
 int		optimize_move(t_move *move);
 t_move	*init_move(void);
