@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:41:45 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/22 04:04:08 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/17 00:01:12 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_move	*duplicate_move(t_move *to_dup)
 {
-	t_move *tmp;
+	t_move	*tmp;
 
 	tmp = init_move();
 	tmp->ra = to_dup->ra;
@@ -27,9 +27,8 @@ t_move	*duplicate_move(t_move *to_dup)
 	return (tmp);
 }
 
-void	exec_move(t_move *move, t_list **stack_a, t_list **stack_b)
+void	exec_move(t_move *move, t_list **stack_a, t_list **stack_b, char c)
 {
-	// printf("Before exec :\nmove_ra = %i, move_rb = %i, move_rr = %i\nmove_rra = %i, move_rrb = %i, move_rrr = %i\n", move->ra, move->rb, move->rr, move->rra, move->rrb, move->rrr);
 	while (move->ra-- > 0)
 		rotate(stack_a, 'a');
 	while (move->rb-- > 0)
@@ -42,36 +41,17 @@ void	exec_move(t_move *move, t_list **stack_a, t_list **stack_b)
 		rrotate(stack_b, 'b');
 	while (move->rrr-- > 0)
 		rrr(stack_a, stack_b);
-	push(stack_b, stack_a, 'b');
-	// printf("After exec :\nmove_ra = %i, move_rb = %i, move_rr = %i\nmove_rra = %i, move_rrb = %i, move_rrr = %i\n", move->ra, move->rb, move->rr, move->rra, move->rrb, move->rrr);
+	if (c == 'a')
+		push(stack_a, stack_b, 'a');
+	if (c == 'b')
+		push(stack_b, stack_a, 'b');
 }
 
-// TOOD : LIGNE 65/67 TRES CURIEUSES
-
-int	optimize_move(t_move *move)
+int	optimize_move_2(t_move *move, int a)
 {
-	int nb_op;
+	int	nb_op;
 
-	// printf("Before opti :\nmove_ra = %i, move_rb = %i, move_rr = %i\nmove_rra = %i, move_rrb = %i, move_rrr = %i\n", move->ra, move->rb, move->rr, move->rra, move->rrb, move->rrr);
-	if (move->ra <= move->rra && move->rb <= move->rrb && move->ra && move->rb)
-		while (move->ra > 0 && move->rb > 0)
-		{
-			move->rr += 1;
-			move->ra--;
-			move->rb--;
-			move->rra = 0;
-			move->rrb = 0;
-		}
-	else if ((move->rra <= move->ra) && (move->rrb <= move->rb) && move->rra && move ->rrb)
-		while (move->rra > 0 && move ->rrb > 0)
-		{
-			move->rrr++;
-			move->rra--;
-			move->rrb--;
-			move->ra = 0;
-			move->rb = 0;
-		}
-	else
+	if (a == 2)
 	{
 		if (move->ra < move->rra && move->rra)
 			move->rra = 0;
@@ -84,10 +64,37 @@ int	optimize_move(t_move *move)
 	}
 	nb_op = move->rrr + move->rr + move->ra + move->rb + move->rra
 		+ move->rrb + 1;
-	// printf("After opti :\nmove_ra = %i, move_rb = %i, move_rr = %i\nmove_rra = %i, move_rrb = %i, move_rrr = %i\n", move->ra, move->rb, move->rr, move->rra, move->rrb, move->rrr);
-	// printf("\t\t COUTE %i OPERATIONS\n", nb_op);
 	move->nb_op = nb_op;
 	return (nb_op);
+}
+
+int	optimize_move(t_move *m)
+{
+	if (m->ra <= m->rra && m->rb <= m->rrb && m->ra && m->rb)
+	{
+		while (m->ra > 0 && m->rb > 0)
+		{
+			m->rr += 1;
+			m->ra--;
+			m->rb--;
+			m->rra = 0;
+			m->rrb = 0;
+		}
+	}
+	else if ((m->rra <= m->ra) && (m->rrb <= m->rb) && m->rra && m->rrb)
+	{
+		while (m->rra > 0 && m->rrb > 0)
+		{
+			m->rrr++;
+			m->rra--;
+			m->rrb--;
+			m->ra = 0;
+			m->rb = 0;
+		}
+	}
+	else
+		return (optimize_move_2(m, 2));
+	return (optimize_move_2(m, 1));
 }
 
 t_move	*init_move(void)
