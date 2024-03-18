@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 16:03:56 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:04:23 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_move
 }	t_move;
 
 // free.c
-int	free_everything(t_list **stack_a, t_list **stack_b, t_move **move);
+int		free_everything(t_list **stack_a, t_list **stack_b, t_move **move);
 
 // parse.c
 int		parse(char **args, t_list **stack_a);

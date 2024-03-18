@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:39:52 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/20 11:51:31 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 19:19:28 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_list
 {

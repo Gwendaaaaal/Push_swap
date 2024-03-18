@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:07:47 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 17:14:14 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 19:20:01 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	rotate(t_list **stack, char c)
 	tmp->next = NULL;
 	ft_lstadd_back(stack, tmp);
 	if (c == 'a' || c == 'b')
-		printf("r%c\n", c);
+		ft_printf("r%c\n", c);
 	else if (c == 'c')
-		printf("rr\n");
+		ft_printf("rr\n");
 }
 
 void	rrotate(t_list **stack, char c)
@@ -40,9 +40,9 @@ void	rrotate(t_list **stack, char c)
 	ft_lstadd_front(stack, tmp->next);
 	tmp->next = NULL;
 	if (c == 'a' || c == 'b')
-		printf("rr%c\n", c);
+		ft_printf("rr%c\n", c);
 	else if (c == 'c')
-		printf("rrr\n");
+		ft_printf("rrr\n");
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)

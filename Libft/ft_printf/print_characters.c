@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   print_characters.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 23:34:13 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 18:49:04 by gholloco         ###   ########.fr       */
+/*   Created: 2023/11/30 01:56:35 by gholloco          #+#    #+#             */
+/*   Updated: 2023/12/01 18:17:37 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "ft_printf.h"
 
-void	push(t_list **to_push, t_list **stack, char c)
+int	print_char(char c)
 {
-	t_list	*tmp;
+	write(1, &c, 1);
+	return (1);
+}
 
-	if (ft_lstsize(*stack) == 0)
-		return ;
-	tmp = (*stack);
-	(*stack) = (*stack)->next;
-	ft_lstadd_front(to_push, tmp);
-	ft_printf("p%c\n", c);
+int	print_percent(void)
+{
+	write(1, "%", 1);
+	return (1);
+}
+
+int	print_string(char *string)
+{
+	int		len;
+
+	if (!string)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	len = 0;
+	while (string[len])
+	{
+		write(1, &(string[len]), 1);
+		len++;
+	}
+	return (len);
 }
