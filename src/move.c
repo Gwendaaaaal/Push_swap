@@ -6,16 +6,17 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:41:45 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/17 00:01:12 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 15:53:01 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_move	*duplicate_move(t_move *to_dup)
+t_move	*duplicate_move(t_move *to_dup, t_move *to_free)
 {
 	t_move	*tmp;
 
+	free(to_free);
 	tmp = init_move();
 	tmp->ra = to_dup->ra;
 	tmp->rb = to_dup->rb;
@@ -53,9 +54,9 @@ int	optimize_move_2(t_move *move, int a)
 
 	if (a == 2)
 	{
-		if (move->ra < move->rra && move->rra)
+		if (move->ra <= move->rra && move->rra)
 			move->rra = 0;
-		else if (move->rra < move ->ra && move->ra)
+		else if (move->rra <= move ->ra && move->ra)
 			move->ra = 0;
 		if (move->rb <= move->rrb && move->rrb)
 			move->rrb = 0;
@@ -102,6 +103,8 @@ t_move	*init_move(void)
 	t_move	*move;
 
 	move = malloc(sizeof(t_move));
+	if (!move)
+		return (NULL);
 	move->ra = 0;
 	move->rb = 0;
 	move->rr = 0;
@@ -109,7 +112,5 @@ t_move	*init_move(void)
 	move->rrb = 0;
 	move->rrr = 0;
 	move->nb_op = 2147483647;
-	if (!move)
-		return (NULL);
 	return (move);
 }

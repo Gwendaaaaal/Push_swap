@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:07:47 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/22 04:16:24 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:14:14 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	rotate(t_list **stack, char c)
 	ft_lstadd_back(stack, tmp);
 	if (c == 'a' || c == 'b')
 		printf("r%c\n", c);
-	else if (c == 'D')
+	else if (c == 'c')
 		printf("rr\n");
 }
 

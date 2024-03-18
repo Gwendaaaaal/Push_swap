@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 02:17:22 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/17 00:01:35 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:47:45 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ int	find_best_move(t_list **stack_a, t_list **stack_b, t_move **move)
 		else
 			f_m(tmp, move, find_below_value(*stack_b, tmp->content), *stack_b);
 		if (new_move->nb_op > (*move)->nb_op)
-			new_move = duplicate_move(*move);
+			new_move = duplicate_move(*move, new_move);
 		tmp = tmp->next;
 		i++;
 	}
-	(*move) = new_move;
-	return (0);
+	(*move) = duplicate_move(new_move, *move);
+	return (free(new_move), 0);
 }
 
 int	sort_into_b(t_list **stack_a, t_list **stack_b, t_move **move)

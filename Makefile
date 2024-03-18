@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/03/16 23:55:55 by gholloco         ###   ########.fr        #
+#    Updated: 2024/03/18 14:53:18 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 SRC_DIR = src
 
-SOURCES = main.c move.c parse.c push.c rotate.c sort.c sort_into_a.c sort_into_b.c swap.c utils.c
+SOURCES = free.c main.c move.c parse.c push.c rotate.c sort.c sort_into_a.c sort_into_b.c swap.c utils.c
 
 OBJ_DIR = obj
 

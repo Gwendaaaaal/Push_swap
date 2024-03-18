@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:44:00 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/13 14:45:42 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:06:32 by gholloco         ###   ########.fr       */
 /*   Updated: 2024/02/09 23:02:25 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -69,12 +69,12 @@ int	parse(char **argv, t_list **stack_a)
 
 	i = 1;
 	if (!check_args(argv))
-		return (write(1, "Error\n", 6), 0);
+		return (0);
 	while (argv[i])
 	{
 		number = ft_atoi(argv[i]);
 		if (!check_dup(*stack_a, number))
-			return (write(1, "Error\n", 6), 0);
+			return (0);
 		tmp = ft_lstnew(number);
 		if (!tmp)
 			return (0);

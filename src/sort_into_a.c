@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:56:27 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/17 05:16:32 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:18:58 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,9 @@ int	find_best_move_a(t_list **stack_a, t_list **stack_b, t_move **move)
 {
 	t_list	*tmp;
 	int		above_value;
-	
+
 	tmp = *stack_b;
 	above_value = find_above_value(*stack_a, tmp->content);
-	// printf("On doit push %i au dessus de %i", tmp->content, above_value);
 	if (above_value == tmp->content)
 		fill_move(stack_a, min_stack_value(*stack_a), move);
 	else

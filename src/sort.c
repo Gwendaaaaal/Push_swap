@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:49:51 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/17 05:22:41 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:52:21 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	sort_three_stack(t_list **stack)
 			swap(stack);
 	}
 }
-
 
 int	sort(t_list **stack_a, t_list **stack_b, t_move **move)
 {
