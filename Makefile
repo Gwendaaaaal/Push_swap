@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/03/19 19:07:57 by gholloco         ###   ########.fr        #
+#    Updated: 2024/03/19 19:24:56 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,9 +40,9 @@ CFLAGS = -g -Wall -Werror -Wextra
 
 RMFLAGS = -rf
 
-all : $(NAME)
+all : $(OBJ_DIR) $(NAME)
 
-bonus : $(CHECKER)
+bonus : $(OBJ_DIR) $(CHECKER)
 
 $(NAME) : $(OBJECTS) $(LIBFT)
 	$(CC) $(CFLAGS) $^ -o $@
@@ -52,6 +52,9 @@ $(CHECKER) : $(OBJECTS_CHECKER) $(LIBFT)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR) :
+	mkdir $(OBJ_DIR)
 
 $(LIBFT) :  
 	make -C $(LIBFT_DIR) bonus
