@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/03/19 18:08:53 by gholloco         ###   ########.fr        #
+#    Updated: 2024/03/19 19:07:57 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,8 @@ RMFLAGS = -rf
 
 all : $(NAME)
 
+bonus : $(CHECKER)
+
 $(NAME) : $(OBJECTS) $(LIBFT)
 	$(CC) $(CFLAGS) $^ -o $@
 
@@ -55,11 +57,11 @@ $(LIBFT) :
 	make -C $(LIBFT_DIR) bonus
 
 clean :
-	rm $(RMFLAGS) $(OBJECTS)
+	rm $(RMFLAGS) $(OBJECTS) $(OBJECTS_CHECKER)
 	make -C $(LIBFT_DIR) clean 
 
 fclean : clean
-	rm $(RMFLAGS) $(NAME)
+	rm $(RMFLAGS) $(NAME) $(CHECKER)
 	make -C $(LIBFT_DIR) fclean
 
 re : fclean all

@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:07:33 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 18:36:09 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:43:02 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int checker(t_list **stack_a, t_list **stack_b)
 	while (move)
 	{
 		if (!make_move(stack_a, stack_b, move))
-			return(write(2, "Error\n", 6), free_everything(stack_a, stack_b, NULL), 0);
+			return(write(2, "Error\n", 6), 0);
 		free(move);
 		move = get_next_line(0);
 	}
