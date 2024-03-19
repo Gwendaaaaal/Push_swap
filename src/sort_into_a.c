@@ -6,11 +6,11 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:56:27 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 14:18:58 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:38:16 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	fill_move(t_list **stack_a, int value, t_move **move)
 {

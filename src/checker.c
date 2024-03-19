@@ -6,11 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:07:33 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 18:18:02 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:36:09 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "../includes/checker.h"
 
 int	make_move(t_list **stack_a, t_list **stack_b, char *move)
 {

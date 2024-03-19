@@ -6,11 +6,11 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 02:17:22 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 17:47:45 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:38:23 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	f_m(t_list *node, t_move **move, int value, t_list *stack)
 {

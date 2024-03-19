@@ -6,12 +6,12 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:12:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 16:48:44 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:38:46 by gholloco         ###   ########.fr       */
 /*   Updated: 2024/02/10 01:13:03 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	print_stacks(t_list *stack_a, t_list *stack_b)
 {

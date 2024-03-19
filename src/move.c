@@ -6,11 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:41:45 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 18:02:42 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:37:38 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 t_move	*duplicate_move(t_move *to_dup, t_move *to_free)
 {

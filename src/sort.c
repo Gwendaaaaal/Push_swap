@@ -6,11 +6,11 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:49:51 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 18:03:58 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:38:09 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sort_three_stack(t_list **stack)
 {

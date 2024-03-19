@@ -6,11 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:42:32 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 18:08:09 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:38:43 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	free_everything(t_list **stack_a, t_list **stack_b, t_move **move)
 {

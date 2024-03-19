@@ -6,14 +6,14 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 17:52:48 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:36:35 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "Libft/libft.h"
+# include "../Libft/libft.h"
 # include <unistd.h>
 # include <stdio.h>
 

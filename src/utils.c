@@ -6,11 +6,11 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:15:49 by gholloco          #+#    #+#             */
-/*   Updated: 2024/02/20 16:16:10 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:38:38 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 int	max_stack_value(t_list *stack)
 {

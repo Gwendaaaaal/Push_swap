@@ -6,12 +6,12 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:44:00 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 16:06:32 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:37:45 by gholloco         ###   ########.fr       */
 /*   Updated: 2024/02/09 23:02:25 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 static int	check_number(char *str)
 {

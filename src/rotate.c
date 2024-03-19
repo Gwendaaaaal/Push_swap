@@ -6,11 +6,11 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:07:47 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 17:49:02 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:38:03 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	rotate(t_list **stack, char c, char print)
 {
