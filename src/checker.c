@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:07:33 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 18:43:02 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 19:30:18 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	make_move(t_list **stack_a, t_list **stack_b, char *move)
 	return (1);
 }
 
-int checker(t_list **stack_a, t_list **stack_b)
+int	checker(t_list **stack_a, t_list **stack_b)
 {
 	char	*move;
 
@@ -49,7 +49,7 @@ int checker(t_list **stack_a, t_list **stack_b)
 	while (move)
 	{
 		if (!make_move(stack_a, stack_b, move))
-			return(write(2, "Error\n", 6), 0);
+			return (write(2, "Error\n", 6), 0);
 		free(move);
 		move = get_next_line(0);
 	}
@@ -67,9 +67,8 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	
 	if (argc == 1)
-		return(free_everything(&stack_a, &stack_b, NULL), 0);
+		return (free_everything(&stack_a, &stack_b, NULL), 0);
 	if (!parse(argv, &stack_a))
 	{
 		free_everything(&stack_a, &stack_b, NULL);
