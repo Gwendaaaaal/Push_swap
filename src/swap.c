@@ -6,13 +6,13 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 23:31:08 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 19:20:14 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:45:49 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(t_list **stack)
+void	swap(t_list **stack, char c, char print)
 {
 	t_list	*tmp;
 
@@ -22,11 +22,14 @@ void	swap(t_list **stack)
 	(*stack) = (*stack)->next;
 	tmp->next = (*stack)->next;
 	(*stack)->next = tmp;
-	ft_printf("sa\n");
+	if (print)
+		ft_printf("s%c\n", c);
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b, char print)
 {
-	swap(stack_a);
-	swap(stack_b);
+	swap(stack_a, 'a', 0);
+	swap(stack_b, 'b', 0);
+	if (print)
+		ft_printf("ss\n");
 }

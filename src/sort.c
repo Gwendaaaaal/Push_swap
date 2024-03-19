@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:49:51 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 16:52:21 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:03:58 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ void	sort_three_stack(t_list **stack)
 	tmp = *stack;
 	if (min_stack_value(*stack) == tmp->content)
 	{
-		swap(stack);
-		rotate(stack, 'a');
+		swap(stack, 'a', 1);
+		rotate(stack, 'a', 1);
 	}
 	else if (max_stack_value(*stack) == tmp->content)
 	{
-		rotate(stack, 'a');
+		rotate(stack, 'a', 1);
 		if (!stack_sorted(*stack))
-			swap(stack);
+			swap(stack, 'a', 1);
 	}
 	else
 	{
 		if (max_stack_value(*stack) == tmp->next->content)
-			rrotate(stack, 'a');
+			rrotate(stack, 'a', 1);
 		else
-			swap(stack);
+			swap(stack, 'a', 1);
 	}
 }
 
@@ -45,7 +45,7 @@ int	sort(t_list **stack_a, t_list **stack_b, t_move **move)
 	stack_a_size = ft_lstsize(*stack_a);
 	stack_b_size = ft_lstsize(*stack_b);
 	while (stack_a_size-- > 3 && stack_b_size++ < 2)
-		push(stack_b, stack_a, 'b');
+		push(stack_b, stack_a, 'b', 1);
 	while (stack_a_size-- >= 3)
 		sort_into_b(stack_a, stack_b, move);
 	if (!stack_sorted(*stack_a))

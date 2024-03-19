@@ -6,21 +6,29 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/03/18 14:53:18 by gholloco         ###   ########.fr        #
+#    Updated: 2024/03/19 18:08:53 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
+CHECKER = checker
+
 SRC_DIR = src
 
 SOURCES = free.c main.c move.c parse.c push.c rotate.c sort.c sort_into_a.c sort_into_b.c swap.c utils.c
+
+SOURCES_CHECKER = checker.c free.c parse.c rotate.c swap.c push.c utils.c
 
 OBJ_DIR = obj
 
 OBJECT = $(SOURCES:.c=.o)
 
+OBJECT_CHECKER = $(SOURCES_CHECKER:.c=.o)
+
 OBJECTS = $(addprefix $(OBJ_DIR)/, $(OBJECT))
+
+OBJECTS_CHECKER = $(addprefix $(OBJ_DIR)/, $(OBJECT_CHECKER))
 
 LIBFT_DIR = ./Libft
 
@@ -35,6 +43,9 @@ RMFLAGS = -rf
 all : $(NAME)
 
 $(NAME) : $(OBJECTS) $(LIBFT)
+	$(CC) $(CFLAGS) $^ -o $@
+
+$(CHECKER) : $(OBJECTS_CHECKER) $(LIBFT)
 	$(CC) $(CFLAGS) $^ -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c

@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 18:04:23 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:52:48 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ int		sort_into_a(t_list **stack_a, t_list **stack_b, t_move **move);
 int		sort_into_b(t_list **stack_a, t_list **stack_b, t_move **move);
 
 // swap.c
-void	swap(t_list **stack);
-void	ss(t_list **stack_a, t_list **stack_b);
+void	swap(t_list **stack, char c, char print);
+void	ss(t_list **stack_a, t_list **stack_b, char print);
 
 // push.c
-void	push(t_list **to_push, t_list **stack, char c);
+void	push(t_list **to_push, t_list **stack, char c, char print);
 
 // rotate.c
-void	rotate(t_list **stack, char c);
-void	rrotate(t_list **stack, char c);
-void	rr(t_list **stack_a, t_list **stack_b);
-void	rrr(t_list **stack_a, t_list **stack_b);
+void	rotate(t_list **stack, char c, char print);
+void	rrotate(t_list **stack, char c, char print);
+void	rr(t_list **stack_a, t_list **stack_b, char print);
+void	rrr(t_list **stack_a, t_list **stack_b, char print);
 
 // main.c
 void	print_stacks(t_list *stack_a, t_list *stack_b);

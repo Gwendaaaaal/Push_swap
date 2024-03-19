@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:41:45 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 15:53:01 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:02:42 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ t_move	*duplicate_move(t_move *to_dup, t_move *to_free)
 void	exec_move(t_move *move, t_list **stack_a, t_list **stack_b, char c)
 {
 	while (move->ra-- > 0)
-		rotate(stack_a, 'a');
+		rotate(stack_a, 'a', 1);
 	while (move->rb-- > 0)
-		rotate(stack_b, 'b');
+		rotate(stack_b, 'b', 1);
 	while (move->rr-- > 0)
-		rr(stack_a, stack_b);
+		rr(stack_a, stack_b, 1);
 	while (move->rra-- > 0)
-		rrotate(stack_a, 'a');
+		rrotate(stack_a, 'a', 1);
 	while (move->rrb-- > 0)
-		rrotate(stack_b, 'b');
+		rrotate(stack_b, 'b', 1);
 	while (move->rrr-- > 0)
-		rrr(stack_a, stack_b);
+		rrr(stack_a, stack_b, 1);
 	if (c == 'a')
-		push(stack_a, stack_b, 'a');
+		push(stack_a, stack_b, 'a', 1);
 	if (c == 'b')
-		push(stack_b, stack_a, 'b');
+		push(stack_b, stack_a, 'b', 1);
 }
 
 int	optimize_move_2(t_move *move, int a)

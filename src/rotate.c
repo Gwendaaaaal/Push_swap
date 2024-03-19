@@ -6,13 +6,13 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:07:47 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 19:20:01 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:49:02 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rotate(t_list **stack, char c)
+void	rotate(t_list **stack, char c, char print)
 {
 	t_list	*tmp;
 
@@ -22,13 +22,11 @@ void	rotate(t_list **stack, char c)
 	(*stack) = (*stack)->next;
 	tmp->next = NULL;
 	ft_lstadd_back(stack, tmp);
-	if (c == 'a' || c == 'b')
+	if (print)
 		ft_printf("r%c\n", c);
-	else if (c == 'c')
-		ft_printf("rr\n");
 }
 
-void	rrotate(t_list **stack, char c)
+void	rrotate(t_list **stack, char c, char print)
 {
 	t_list	*tmp;
 
@@ -39,20 +37,22 @@ void	rrotate(t_list **stack, char c)
 		tmp = tmp->next;
 	ft_lstadd_front(stack, tmp->next);
 	tmp->next = NULL;
-	if (c == 'a' || c == 'b')
+	if (print)
 		ft_printf("rr%c\n", c);
-	else if (c == 'c')
+}
+
+void	rr(t_list **stack_a, t_list **stack_b, char print)
+{
+	rotate(stack_a, 'a', 0);
+	rotate(stack_b, 'b', 0);
+	if (print)
+		ft_printf("rr\n");
+}
+
+void	rrr(t_list **stack_a, t_list **stack_b, char print)
+{
+	rrotate(stack_a, 'a', 0);
+	rrotate(stack_b, 'b', 0);
+	if (print)
 		ft_printf("rrr\n");
-}
-
-void	rr(t_list **stack_a, t_list **stack_b)
-{
-	rotate(stack_a, ' ');
-	rotate(stack_b, 'c');
-}
-
-void	rrr(t_list **stack_a, t_list **stack_b)
-{
-	rrotate(stack_a, ' ');
-	rrotate(stack_b, 'c');
 }

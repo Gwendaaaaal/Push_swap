@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:12:53 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/18 19:23:26 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:48:44 by gholloco         ###   ########.fr       */
 /*   Updated: 2024/02/10 01:13:03 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	move = init_move();
 	if (argc == 1)
-		return (0);
+		return (free_everything(&stack_a, &stack_b, &move), 0);
 	if (!parse(argv, &stack_a))
 	{
 		free_everything(&stack_a, &stack_b, &move);
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 		return (-1);
 	}
 	if (stack_sorted(stack_a))
-		return (0);
+		return (free_everything(&stack_a, &stack_b, &move), 0);
 	sort(&stack_a, &stack_b, &move);
 	// print_stacks(stack_a, stack_b);
 	free_everything(&stack_a, &stack_b, &move);
