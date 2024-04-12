@@ -6,7 +6,7 @@
 #    By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 21:58:52 by gholloco          #+#    #+#              #
-#    Updated: 2024/03/19 19:24:56 by gholloco         ###   ########.fr        #
+#    Updated: 2024/04/12 18:05:18 by gholloco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJECTS = $(addprefix $(OBJ_DIR)/, $(OBJECT))
 
 OBJECTS_CHECKER = $(addprefix $(OBJ_DIR)/, $(OBJECT_CHECKER))
 
-LIBFT_DIR = ./Libft
+LIBFT_DIR = ./includes/Libft
 
 LIBFT = $(LIBFT_DIR)/libft.a
 
