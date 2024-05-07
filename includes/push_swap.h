@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 19:14:23 by gholloco          #+#    #+#             */
-/*   Updated: 2024/04/12 18:05:06 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:56:36 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ void	rrr(t_list **stack_a, t_list **stack_b, char print);
 void	print_stacks(t_list *stack_a, t_list *stack_b);
 
 // move.c
-t_move	*duplicate_move(t_move *to_dup, t_move *to_free);
+t_move	*duplicate_move(t_move *to_dup, t_move *to_free, t_list **stack_a, t_list **stack_b);
 void	exec_move(t_move *move, t_list **stack_a, t_list **stack_b, char c);
 int		optimize_move(t_move *move);
-t_move	*init_move(void);
+t_move	*init_move(t_list **stack_a, t_list **stack_b);
 
 // utils.c
 int		max_stack_value(t_list *stack);

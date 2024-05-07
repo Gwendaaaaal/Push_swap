@@ -6,18 +6,18 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:41:45 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 18:37:38 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:56:07 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_move	*duplicate_move(t_move *to_dup, t_move *to_free)
+t_move	*duplicate_move(t_move *to_dup, t_move *to_free, t_list **stack_a, t_list **stack_b)
 {
 	t_move	*tmp;
 
 	free(to_free);
-	tmp = init_move();
+	tmp = init_move(stack_a, stack_b);
 	tmp->ra = to_dup->ra;
 	tmp->rb = to_dup->rb;
 	tmp->rr = to_dup->rr;
@@ -98,13 +98,16 @@ int	optimize_move(t_move *m)
 	return (optimize_move_2(m, 1));
 }
 
-t_move	*init_move(void)
+t_move	*init_move(t_list **stack_a, t_list **stack_b)
 {
 	t_move	*move;
 
 	move = malloc(sizeof(t_move));
 	if (!move)
-		return (NULL);
+	{
+		free_everything(stack_a, stack_b, NULL);
+		exit(0);
+	}
 	move->ra = 0;
 	move->rb = 0;
 	move->rr = 0;

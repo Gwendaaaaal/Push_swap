@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 22:56:27 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 18:38:16 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:29:28 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ int	fill_move(t_list **stack_a, int value, t_move **move)
 	}
 	return (optimize_move(*move));
 }
-
-//TODO : PEUT ETRE DANS LE IF C MIN ET PAS BELOW
 
 int	find_best_move_a(t_list **stack_a, t_list **stack_b, t_move **move)
 {

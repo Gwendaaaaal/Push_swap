@@ -6,7 +6,7 @@
 /*   By: gholloco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:07:33 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 19:30:18 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:12:07 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,18 @@ int	make_move(t_list **stack_a, t_list **stack_b, char *move)
 int	checker(t_list **stack_a, t_list **stack_b)
 {
 	char	*move;
+	int		error;
 
 	move = get_next_line(0);
 	while (move)
 	{
 		if (!make_move(stack_a, stack_b, move))
-			return (write(2, "Error\n", 6), 0);
+			error = 1;
 		free(move);
 		move = get_next_line(0);
 	}
+	if (error)
+		return (write(2, "Error\n", 6), 0);
 	if (stack_sorted(*stack_a) && !ft_lstsize(*stack_b))
 		ft_printf("OK\n");
 	else

@@ -6,7 +6,7 @@
 /*   By: gholloco <gwendal.hollocou@orange.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 02:17:22 by gholloco          #+#    #+#             */
-/*   Updated: 2024/03/19 18:38:23 by gholloco         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:31:06 by gholloco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	find_best_move(t_list **stack_a, t_list **stack_b, t_move **move)
 	int		i;
 	int		lst_size;
 
-	new_move = init_move();
+	new_move = init_move(stack_a, stack_b);
 	tmp = *stack_a;
 	i = 0;
 	lst_size = ft_lstsize(*stack_a);
@@ -58,11 +58,11 @@ int	find_best_move(t_list **stack_a, t_list **stack_b, t_move **move)
 		else
 			f_m(tmp, move, find_below_value(*stack_b, tmp->content), *stack_b);
 		if (new_move->nb_op > (*move)->nb_op)
-			new_move = duplicate_move(*move, new_move);
+			new_move = duplicate_move(*move, new_move, stack_a, stack_b);
 		tmp = tmp->next;
 		i++;
 	}
-	(*move) = duplicate_move(new_move, *move);
+	(*move) = duplicate_move(new_move, *move, stack_a, stack_b);
 	return (free(new_move), 0);
 }
 
